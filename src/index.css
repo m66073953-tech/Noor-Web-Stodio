@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+  
+  --color-bg: #1E1E1E;
+  --color-surface: #1A2238; /* Deep Blue */
+  --color-forest: #1B3022;  /* Deep Green */
+  --color-earth: #2C1E16;   /* Deep Brown */
+  --color-accent: #4A90E2;  /* Electric Blue */
+  --color-gold: #C6A75E;    /* Keeping some gold for elegance as requested "fancy" */
+  --color-text-light: #B8C6DB; /* Soft Blue-Gray text instead of white */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-text-light font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold italic;
+  }
+}
+
+.fancy-border {
+  border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.gradient-overlay {
+  background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 0.9));
+}
+
+.btn-elegant {
+  @apply bg-accent/20 text-accent px-10 py-4 rounded-none font-medium transition-all duration-500 hover:bg-accent hover:text-bg border border-accent/40 backdrop-blur-md;
+}
+
+.section-padding {
+  @apply py-16 md:py-32 px-6 md:px-12 lg:px-24;
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-xl border border-white/5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A2238;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4A90E2;
+}
